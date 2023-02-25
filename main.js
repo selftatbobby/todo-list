@@ -1,1 +1,1 @@
-console.log("hi");
+(()=>{console.log("02/26/2023");const e=new function(e,o,i,t){this.title="mealprep",this.description="make food",this.dueDate="02/28/2023",this.priority="medium"}("mealprep","make food","02/28/2023","medium");console.log(e.dueDate)})();
