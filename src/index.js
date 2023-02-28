@@ -17,3 +17,13 @@ const todoConstructor = function(title, description, dueDate, priority) {
 }
 const mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 console.log(mealPrep.dueDate);
+
+//Projects
+const defaultProjects = [];
+const funProjects = [];
+defaultProjects.push(workout, mealPrep);
+console.log(defaultProjects[0].description);
+console.log(defaultProjects[1].description);
+
+defaultProjects["height"]=mealPrep.dueDate;
+console.log(defaultProjects["height"]);
