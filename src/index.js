@@ -2,9 +2,8 @@
 const todoFactory = (title, description, dueDate, priority) => {
     return {title, description, dueDate, priority}
 }
-const workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
+let workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
 console.log(workout.dueDate);
-
 
 
 
@@ -15,15 +14,18 @@ const todoConstructor = function(title, description, dueDate, priority) {
     this.dueDate = dueDate;
     this.priority = priority;
 }
-const mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
+let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 console.log(mealPrep.dueDate);
 
 //Projects
-const defaultProjects = [];
-const funProjects = [];
+let defaultProjects = [];
+let funProjects = [];
 defaultProjects.push(workout, mealPrep);
+
+
+funProjects = defaultProjects.splice(0,1)
 console.log(defaultProjects[0].description);
-console.log(defaultProjects[1].description);
+console.log(funProjects[0].description);
 
 defaultProjects["height"]=mealPrep.dueDate;
 console.log(defaultProjects["height"]);
