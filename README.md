@@ -9,3 +9,13 @@ Modules
         -create todo items
         -manipulator of todo items
     -DOM manipulator
+
+Todo
+    -Build skeleton html
+    -Basic CSS styling for layout
+    -Todo List Logic
+        -create projects
+        -create todo items
+        -show projects
+        -show todo items
+        -modify/delete/mark complete todo items
