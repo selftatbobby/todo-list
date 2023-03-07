@@ -1,3 +1,6 @@
+import "./style.css";
+
+
 //Factory function pattern
 const todoFactory = (title, description, dueDate, priority) => {
     return {title, description, dueDate, priority}
