@@ -12,7 +12,7 @@ let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "0
 
 
 //Constructor pattern to create todo items
-const todoConstructor = function(title, description, dueDate, priority) {
+const todoConstructor = function(title, description, dueDate, priority, project) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
@@ -21,7 +21,10 @@ const todoConstructor = function(title, description, dueDate, priority) {
 let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 
 
-//Projects will be arrays
+//Projects will be dom created elements
+
+
+
 let defaultProjects = [];
 let funProjects = [];
 defaultProjects.push(workout, mealPrep);
@@ -37,9 +40,12 @@ console.log(typeof(workout));
 console.log(defaultProjects);
 console.log(defaultProjects[1]);
 
-function createProject(projectName) {
-    let projectName = [];
+
+const projectFactory = (projectName) => {
+    var projectName = [];
+    return projectName;
 }
 
-createProject(camping);
-console.log(camping);
+let test1 = new projectFactory();
+console.log(test1);
+console.log("hi");

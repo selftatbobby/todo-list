@@ -15,7 +15,7 @@ Todo
     <!-- -Basic CSS styling for layout -->
     -Todo List Logic
         -Understand logic between projects and to-do items
-            -create projects
+            -create projects, projects will be dom created elements, figure out how to dynamically create dom elements
             -create todo items
         -show projects
         -show todo items
