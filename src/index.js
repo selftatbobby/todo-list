@@ -21,7 +21,7 @@ const todoConstructor = function(title, description, dueDate, priority, project)
 let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 
 
-//Projects will be dom created elements
+//Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
 
 
 
@@ -41,11 +41,3 @@ console.log(defaultProjects);
 console.log(defaultProjects[1]);
 
 
-const projectFactory = (projectName) => {
-    var projectName = [];
-    return projectName;
-}
-
-let test1 = new projectFactory();
-console.log(test1);
-console.log("hi");

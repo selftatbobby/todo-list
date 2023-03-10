@@ -14,9 +14,9 @@ Todo
     <!-- -Build skeleton html -->
     <!-- -Basic CSS styling for layout -->
     -Todo List Logic
-        -Understand logic between projects and to-do items
+        <!-- -Understand logic between projects and to-do items -->
             -create projects, projects will be dom created elements, figure out how to dynamically create dom elements
-            -create todo items
-        -show projects
-        -show todo items
+            -create todo items, that will append to dom elements
+        -show projects as a list on sidebar
+        -show todo items as tasks under each project
         -modify/delete/mark complete todo items
