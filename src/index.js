@@ -1,12 +1,15 @@
 import "./style.css";
 import { todoFactory, todoConstructor } from "./todo-factory.js";
 
-let defaultProjects = [];
-let funProjects = [];
+//variables
+let mainContent = document.getElementById("mainContent");
+let defaultProjects = document.getElementById("defaultProjects");
+// let funProjects = [];
 
 
 
 
+//functions
 let workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
 let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "03/08/2023", "high")
 
@@ -20,8 +23,9 @@ let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "0
 
 
 
-defaultProjects.push(workout);
-defaultProjects.push(carDelivery);
+// defaultProjects.push(workout);
+// defaultProjects.push(carDelivery);
+defaultProjects.innerHTML = `I have ${workout.description} and ${workout.title}`;
 
 
 funProjects = defaultProjects.splice(0,1)
