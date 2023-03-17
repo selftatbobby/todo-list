@@ -20,3 +20,7 @@ Todo
         -show projects as a list on sidebar
         -show todo items as tasks under each project
         -modify/delete/mark complete todo items (i.e. CSS styling)
+
+1. make overlay form to fill in todo item details
+2. build out inbox functionality
+    3. replicate functionality to other pages/divs/projects

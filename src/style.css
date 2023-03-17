@@ -1,11 +1,11 @@
-.container {
+#container {
     display: grid;
     grid: 1fr 5fr / 1fr 4fr;
     width: 100%;
     height: 100vh;
 }
 
-.header {
+#header {
     display: flex;
     grid-area: 1 / 1 / span 1/ span 2;
     border: 1px solid blue;
@@ -13,12 +13,27 @@
     align-items: center;
 }
 
-.side-bar {
+#sideBar {
     border: 1px solid red;
     grid-area: 2 / 1 / span 1 / span 1;
 }
 
-.main-content {
+#mainContent {
     border: 1px solid green;
     grid-area: 2 / 2 / span 1 / span 1;
+}
+
+#addTodoItemForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    flex-direction: column;
 }
