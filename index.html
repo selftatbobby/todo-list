@@ -8,12 +8,47 @@
     <title>Todo List</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <div id="header"><h1>To-Do List</h1></div>
-        <div id="sideBar"></div>
-        <div id="mainContent">
-            <div id="defaultProjects"></div>
+        <div id="sideBar">
+            <button id="inbox">Inbox</button>
+            <button id="addProject">Add Project</button>
         </div>
+        <div id="mainContent">
+            <div id="defaultProjects">
+                
+            </div>
+            <button id="todoItemForm">I want to add a todo Item</button>
+        </div>
+
+        <div id="addTodoItemForm">
+            <div class="nameFormPopup">
+                <div class="formPopup" id="popupForm">
+                    <form name='todoItemForm' action="xxx.html" method="post" id="nameForm">
+                        <div class="field">
+                            <label for="playerCircle">Player Circle's Name:</label>
+                            <input type="text" id="playerCircle" name="playerCircle" placeholder="Enter Name">
+                        </div>
+                        <div class="field">
+                            <label for="playerCircle">Player Circle's Name:</label>
+                            <input type="text" id="playerCircle" name="playerCircle" placeholder="Enter Name">
+                        </div>
+                        <div class="field">
+                            <label for="playerCircle">Player Circle's Name:</label>
+                            <input type="text" id="playerCircle" name="playerCircle" placeholder="Enter Name">
+                        </div>
+                        <div class="field">
+                            <label for="playerCircle">Player Circle's Name:</label>
+                            <input type="text" id="playerCircle" name="playerCircle" placeholder="Enter Name">
+                        </div>
+                        <button id="addTodoItem">Add todo item</button>
+                    </form>
+                </div>
+                <h2>Fill out the required fields</h2>
+            </div>
+        </div>
+
+
     </div>
    
 </body>
