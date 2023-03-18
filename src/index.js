@@ -3,11 +3,11 @@ import { todoFactory, todoConstructor } from "./todo-factory.js";
 
 //variables
 const addTodoItemForm = document.getElementById("addTodoItemForm");
-const form = document.getElementById('todoItemForm');
+let todoItemFormBtn = document.getElementById('todoItemFormBtn');
 let mainContent = document.getElementById("mainContent");
 let defaultProjects = document.getElementById("defaultProjects");
 let inbox = document.getElementById("inbox");
-let addTodoItemBtn = document.getElementById("addTodoItem");
+let addTodoItemBtn = document.getElementById("addTodoItemBtn");
 
 // let funProjects = [];
 
@@ -33,19 +33,23 @@ function addTodoItem() {
 }
 
 function showInbox() {
-    
 
 }
 
-addTodoItemBtn.addEventListener("click", addTodoItem);
 
 
-class a {
 
+function showAddTodoForm() {
+    addTodoItemForm.style.display = "flex";
+}
+function hideAddTodoForm() {
+    addTodoItemForm.style.display = "none";
 }
 //Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
 
-
+addTodoItemBtn.addEventListener("click", addTodoItem);
+todoItemFormBtn.addEventListener("click", showAddTodoForm);
+document.getElementById("hideForm").addEventListener("click", hideAddTodoForm);
 
 
 // defaultProjects.push(workout);
