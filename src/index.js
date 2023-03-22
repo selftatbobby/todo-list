@@ -3,6 +3,7 @@ import { todoFactory, todoConstructor } from "./todo-factory.js";
 
 //variables
 const addTodoItemForm = document.getElementById("addTodoItemForm");
+const todoItemForm = document.getElementById("todoItemForm");
 let todoItemFormBtn = document.getElementById('todoItemFormBtn');
 let mainContent = document.getElementById("mainContent");
 let defaultProjects = document.getElementById("defaultProjects");
@@ -21,14 +22,25 @@ let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "0
 
 // let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 function addTodoItem() {
-    let newTitle = "hi";
-    let newDescription = "hsi";
-    let newDueDate = "his";
-    let newPriority = "hissss";
-    let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
-    let todoItem = document.createElement('p');
-    defaultProjects.appendChild(todoItem);
-    todoItem.innerText = `Todo Item: ${newTitle}. Description: ${newDescription}.`;
+    let newTitle = document.forms["todoItemForm"]["todoTitle"].value;
+    let newDescription = document.forms["todoItemForm"]["todoDescription"].value;
+    let newDueDate = document.forms["todoItemForm"]["todoDuedate"].value;
+    let newPriority = document.forms["todoItemForm"]["todoPriority"].value;
+    if (newTitle == "" || newDescription == "" || newDueDate == "" || newPriority == "") {
+        alert("Fill it out!");
+        return false;
+    }
+    else {
+        let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
+        let todoItem = document.createElement('p');
+        defaultProjects.appendChild(todoItem);
+        todoItem.innerText = `Todo Item: ${newTitle}. Description: ${newDescription}.`;
+    }
+    hideAddTodoForm();
+}
+
+
+function validateForm() {
 
 }
 
@@ -41,9 +53,11 @@ function showInbox() {
 
 function showAddTodoForm() {
     addTodoItemForm.style.display = "flex";
+    todoItemForm.reset();
 }
 function hideAddTodoForm() {
     addTodoItemForm.style.display = "none";
+    todoItemForm.reset();
 }
 //Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
 
