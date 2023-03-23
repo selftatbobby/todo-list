@@ -22,7 +22,7 @@ Todo
         -modify/delete/mark complete todo items (i.e. CSS styling)
 
 <!-- 1. make overlay form to fill in todo item details -->
-    1a. finalize addtodoform functionality
+    <!-- 1a. finalize addtodoform functionality -->
     2a. style
-2. build out inbox functionality
-    3. replicate functionality to other pages/divs/projects
+2. build out inbox functionality to show current page of todo items
+    3. replicate functionality to other pages/divs/projects when add project button is clicked

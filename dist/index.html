@@ -35,11 +35,19 @@
                         </div>
                         <div class="field">
                             <label for="todoDuedate">Todo Duedate:</label>
-                            <input type="text" id="todoDuedate" name="todoDuedate" placeholder="Enter Duedate">
+                            <input type="date" id="todoDuedate" name="todoDuedate" placeholder="Enter Duedate">
                         </div>
                         <div class="field">
                             <label for="todoPriority">Todo Priority:</label>
-                            <input type="text" id="todoPriority" name="todoPriority" placeholder="Enter Priority">
+
+                            <input type="radio" id="todoPriority" name="todoPriority" value="low">
+                            <label for="todoPriority">low</label>
+
+                            <input type="radio" id="todoPriority" name="todoPriority" value="medium">
+                            <label for="todoPriority">medium</label>
+
+                            <input type="radio" id="todoPriority" name="todoPriority" value="high">
+                            <label for="todoPriority">high</label>    
                         </div>
                         <button id="addTodoItemBtn">Add todo item</button>
                         <button id="hideForm">Nevermind</button>

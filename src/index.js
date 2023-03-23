@@ -17,8 +17,8 @@ addTodoItemForm.addEventListener('submit', (event) => {
 });
 
 //functions
-let workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
-let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "03/08/2023", "high")
+// let workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
+// let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "03/08/2023", "high")
 
 // let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 function addTodoItem() {
@@ -32,9 +32,10 @@ function addTodoItem() {
     }
     else {
         let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
+
         let todoItem = document.createElement('p');
         defaultProjects.appendChild(todoItem);
-        todoItem.innerText = `Todo Item: ${newTitle}. Description: ${newDescription}.`;
+        todoItem.innerText = `TODO ITEM: ${newTitle}.\nDESCRIPTION: ${newDescription}.\nDUE-DATE: ${newDueDate}.\nPRIORITY: ${newPriority}.`;
     }
     hideAddTodoForm();
 }
