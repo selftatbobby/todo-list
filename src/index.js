@@ -2,7 +2,7 @@ import "./style.css";
 import { todoFactory, todoConstructor } from "./todo-factory.js";
 
 //variables
-const addTodoItemForm = document.getElementById("addTodoItemForm");
+const todoItemFormContainer = document.getElementById("todoItemFormContainer");
 const todoItemForm = document.getElementById("todoItemForm");
 let todoItemFormBtn = document.getElementById('todoItemFormBtn');
 let mainContent = document.getElementById("mainContent");
@@ -12,7 +12,7 @@ let addTodoItemBtn = document.getElementById("addTodoItemBtn");
 
 // let funProjects = [];
 
-addTodoItemForm.addEventListener('submit', (event) => {
+todoItemFormContainer.addEventListener('submit', (event) => {
     event.preventDefault();
 });
 
@@ -53,11 +53,11 @@ function showInbox() {
 
 
 function showAddTodoForm() {
-    addTodoItemForm.style.display = "flex";
+    todoItemFormContainer.style.display = "flex";
     todoItemForm.reset();
 }
 function hideAddTodoForm() {
-    addTodoItemForm.style.display = "none";
+    todoItemFormContainer.style.display = "none";
     todoItemForm.reset();
 }
 //Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox

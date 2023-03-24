@@ -26,3 +26,7 @@ Todo
     2a. style
 2. build out inbox functionality to show current page of todo items
     3. replicate functionality to other pages/divs/projects when add project button is clicked
+        3a. make module that appends div/project to mainContent
+        3b. hides all other div/projects on mainContent
+        3c. object with indexes to reference back to div/projects
+

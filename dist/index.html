@@ -16,49 +16,45 @@
         </div>
         <div id="mainContent">
             <div id="defaultProjects">
-                
+                <h1>Inbox</h1>
             </div>
             <button id="todoItemFormBtn">I want to add a todo Item</button>
         </div>
 
-        <div id="addTodoItemForm">
-            <div class="formPopup">
-                <div class="formPopup" id="popupForm">
-                    <form name="todoItemForm" action="xxx.html" method="post" id="todoItemForm">
-                        <div class="field">
-                            <label for="todoTitle">Todo Title:</label>
-                            <input type="text" id="todoTitle" name="todoTitle" placeholder="Enter Title">
-                        </div>
-                        <div class="field">
-                            <label for="todoDescription">Todo Description:</label>
-                            <input type="text" id="todoDescription" name="todoDescription" placeholder="Enter Description">
-                        </div>
-                        <div class="field">
-                            <label for="todoDuedate">Todo Duedate:</label>
-                            <input type="date" id="todoDuedate" name="todoDuedate" placeholder="Enter Duedate">
-                        </div>
-                        <div class="field">
-                            <label for="todoPriority">Todo Priority:</label>
+        <div id="todoItemFormContainer">
+            <div class="formPopup" id="popupForm">
+                <form name="todoItemForm" action="xxx.html" method="post" id="todoItemForm">
+                    <div class="field">
+                        <label for="todoTitle">Todo Title:</label>
+                        <input type="text" id="todoTitle" name="todoTitle" placeholder="Enter Title">
+                    </div>
+                    <div class="field">
+                        <label for="todoDescription">Todo Description:</label>
+                        <input type="text" id="todoDescription" name="todoDescription" placeholder="Enter Description">
+                    </div>
+                    <div class="field">
+                        <label for="todoDuedate">Todo Duedate:</label>
+                        <input type="date" id="todoDuedate" name="todoDuedate" placeholder="Enter Duedate">
+                    </div>
+                    <div class="field">
+                        <label for="todoPriority">Todo Priority:</label>
 
-                            <input type="radio" id="todoPriority" name="todoPriority" value="low">
-                            <label for="todoPriority">low</label>
+                        <input type="radio" id="todoPriority" name="todoPriority" value="low">
+                        <label for="todoPriority">low</label>
 
-                            <input type="radio" id="todoPriority" name="todoPriority" value="medium">
-                            <label for="todoPriority">medium</label>
+                        <input type="radio" id="todoPriority" name="todoPriority" value="medium">
+                        <label for="todoPriority">medium</label>
 
-                            <input type="radio" id="todoPriority" name="todoPriority" value="high">
-                            <label for="todoPriority">high</label>    
-                        </div>
-                        <button id="addTodoItemBtn">Add todo item</button>
-                        <button id="hideForm">Nevermind</button>
-                    </form>
-                </div>
+                        <input type="radio" id="todoPriority" name="todoPriority" value="high">
+                        <label for="todoPriority">high</label>    
+                    </div>
+                    <button id="addTodoItemBtn">Add todo item</button>
+                    <button id="hideForm">Nevermind</button>
+                </form>
                 <h2>Fill out the required fields</h2>
             </div>
         </div>
 
-
     </div>
-   
 </body>
 </html>
