@@ -13,6 +13,7 @@
         <div id="sideBar">
             <button id="inbox">Inbox</button>
             <button id="addProject">Add Project</button>
+            <div id="projectDashboard"></div>
         </div>
         <div id="mainContent">
             <div id="defaultProjects">
@@ -21,23 +22,24 @@
             <button id="todoItemFormBtn">I want to add a todo Item</button>
         </div>
 
-        <div id="todoItemFormContainer">
+        <div class="inputForms" id="todoItemFormContainer">
+            <h1>Add a Todo Item</h1>
             <div class="formPopup" id="popupForm">
                 <form name="todoItemForm" action="xxx.html" method="post" id="todoItemForm">
                     <div class="field">
-                        <label for="todoTitle">Todo Title:</label>
+                        <label for="todoTitle">Title:</label>
                         <input type="text" id="todoTitle" name="todoTitle" placeholder="Enter Title">
                     </div>
                     <div class="field">
-                        <label for="todoDescription">Todo Description:</label>
+                        <label for="todoDescription">Description:</label>
                         <input type="text" id="todoDescription" name="todoDescription" placeholder="Enter Description">
                     </div>
                     <div class="field">
-                        <label for="todoDuedate">Todo Duedate:</label>
+                        <label for="todoDuedate">Duedate:</label>
                         <input type="date" id="todoDuedate" name="todoDuedate" placeholder="Enter Duedate">
                     </div>
                     <div class="field">
-                        <label for="todoPriority">Todo Priority:</label>
+                        <label for="todoPriority">Priority:</label>
 
                         <input type="radio" id="todoPriority" name="todoPriority" value="low">
                         <label for="todoPriority">low</label>
@@ -48,8 +50,23 @@
                         <input type="radio" id="todoPriority" name="todoPriority" value="high">
                         <label for="todoPriority">high</label>    
                     </div>
-                    <button id="addTodoItemBtn">Add todo item</button>
+                    <button id="addTodoItemBtn">Add Todo Item</button>
                     <button id="hideForm">Nevermind</button>
+                </form>
+                <h2>Fill out the required fields</h2>
+            </div>
+        </div>
+
+        <div class="inputForms" id="projectFormContainer">
+            <h1>Create a Project</h1>
+            <div class="formPopup" id="popupForm">
+                <form name="todoItemForm" action="xxx.html" method="post" id="todoItemForm">
+                    <div class="field">
+                        <label for="projectTitle">Project Title:</label>
+                        <input type="text" id="projectTitle" name="projectTitle" placeholder="Enter Title">
+                    </div>
+                    <button id="createProjectBtn">Create Project</button>
+                    <button id="hideProjectFormBtn">Nevermind</button>
                 </form>
                 <h2>Fill out the required fields</h2>
             </div>

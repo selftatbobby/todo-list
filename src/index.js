@@ -9,12 +9,24 @@ let mainContent = document.getElementById("mainContent");
 let defaultProjects = document.getElementById("defaultProjects");
 let inbox = document.getElementById("inbox");
 let addTodoItemBtn = document.getElementById("addTodoItemBtn");
+let addProjectBtn = document.getElementById("addProject");
+const projectFromContainer = document.getElementById("projectFormContainer");
+let hideProjectFormBtn = document.getElementById("hideProjectFormBtn");
+const inputForms = document.getElementsByClassName("inputForms")
 
 // let funProjects = [];
 
 todoItemFormContainer.addEventListener('submit', (event) => {
     event.preventDefault();
 });
+
+projectFormContainer.addEventListener('submit', (event) => {
+    event.preventDefault();
+});
+
+// inputForms.addEventListener('submit', (event) => {
+//     event.preventDefault();
+// })
 
 //functions
 // let workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
@@ -49,8 +61,13 @@ function showInbox() {
 
 }
 
+function showAddProject() {
+    projectFromContainer.style.display = "flex";
+}
 
-
+function hideAddProject() {
+    projectFromContainer.style.display = "none";
+}
 
 function showAddTodoForm() {
     todoItemFormContainer.style.display = "flex";
@@ -65,6 +82,8 @@ function hideAddTodoForm() {
 addTodoItemBtn.addEventListener("click", addTodoItem);
 todoItemFormBtn.addEventListener("click", showAddTodoForm);
 document.getElementById("hideForm").addEventListener("click", hideAddTodoForm);
+addProjectBtn.addEventListener("click", showAddProject);
+hideProjectFormBtn.addEventListener("click", hideAddProject);
 
 
 // defaultProjects.push(workout);
@@ -78,7 +97,7 @@ document.getElementById("hideForm").addEventListener("click", hideAddTodoForm);
 // console.log(funProjects[0].description);
 
 
-console.log(typeof(workout));
+// console.log(typeof(workout));
 // console.log(defaultProjects);
 // console.log(defaultProjects[1]);
 
