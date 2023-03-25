@@ -78,7 +78,7 @@ document.getElementById("hideForm").addEventListener("click", hideAddTodoForm);
 // console.log(funProjects[0].description);
 
 
-// console.log(typeof(workout));
+console.log(typeof(workout));
 // console.log(defaultProjects);
 // console.log(defaultProjects[1]);
 
