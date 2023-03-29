@@ -1,5 +1,6 @@
 import "./style.css";
 import { todoFactory, todoConstructor } from "./todo-factory.js";
+import { newProject } from "./projects";
 
 //variables
 const todoItemFormContainer = document.getElementById("todoItemFormContainer");
@@ -77,14 +78,18 @@ function hideAddTodoForm() {
     todoItemFormContainer.style.display = "none";
     todoItemForm.reset();
 }
-//Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
 
+// addevent to buttons
 addTodoItemBtn.addEventListener("click", addTodoItem);
 todoItemFormBtn.addEventListener("click", showAddTodoForm);
 document.getElementById("hideForm").addEventListener("click", hideAddTodoForm);
 addProjectBtn.addEventListener("click", showAddProject);
 hideProjectFormBtn.addEventListener("click", hideAddProject);
 
+//Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
+// mainContent.appendChild(newProject);
+mainContent.insertBefore(newProject, todoItemFormBtn)
+console.log(mainContent);
 
 // defaultProjects.push(workout);
 // defaultProjects.push(carDelivery);
