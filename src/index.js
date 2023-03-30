@@ -11,6 +11,7 @@ let defaultProjects = document.getElementById("defaultProjects");
 let inbox = document.getElementById("inbox");
 let addTodoItemBtn = document.getElementById("addTodoItemBtn");
 let addProjectBtn = document.getElementById("addProject");
+let createProjectBtn = document.getElementById("createProjectBtn");
 const projectFromContainer = document.getElementById("projectFormContainer");
 let hideProjectFormBtn = document.getElementById("hideProjectFormBtn");
 const inputForms = document.getElementsByClassName("inputForms")
@@ -62,6 +63,17 @@ function showInbox() {
 
 }
 
+function createProject() {
+    //todo: add div to display
+    mainContent.insertBefore(newProject, todoItemFormBtn)
+    //this references the child elements of target element
+    console.log(mainContent.children[1]);
+    //todo: name of project
+    //todo: create button to go back to this page/div
+    //todo: implement same layout as inbox page/div
+     
+}
+
 function showAddProject() {
     projectFromContainer.style.display = "flex";
 }
@@ -85,11 +97,10 @@ todoItemFormBtn.addEventListener("click", showAddTodoForm);
 document.getElementById("hideForm").addEventListener("click", hideAddTodoForm);
 addProjectBtn.addEventListener("click", showAddProject);
 hideProjectFormBtn.addEventListener("click", hideAddProject);
-
+createProjectBtn.addEventListener("click", createProject);
 //Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
 // mainContent.appendChild(newProject);
-mainContent.insertBefore(newProject, todoItemFormBtn)
-console.log(mainContent);
+
 
 // defaultProjects.push(workout);
 // defaultProjects.push(carDelivery);
