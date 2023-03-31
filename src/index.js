@@ -70,6 +70,7 @@ function showInbox() {
 function createProject() {
     //todo: add div to display
     mainContent.insertBefore(newProject, todoItemFormBtn)
+    //todo: hide every other div except for target div
     //line below references the child elements of target element
     console.log(mainContent.children[1]);
     //todo: name of project
