@@ -21,19 +21,6 @@ const inputForms = document.querySelectorAll(".inputForms");
 // let funProjects = [];
 
 
-//prevents form submit
-inputForms.forEach(item => {
-    item.addEventListener("click", event => {
-        event.preventDefault();
-    })
-})
-// todoItemFormContainer.addEventListener('submit', (event) => {
-//     event.preventDefault();
-// });
-
-// projectFormContainer.addEventListener('submit', (event) => {
-//     event.preventDefault();
-// });
 
 
 
@@ -69,10 +56,19 @@ function showInbox() {
 
 function createProject() {
     //todo: add div to display
-    mainContent.insertBefore(newProject, todoItemFormBtn)
+    let newProjectTitle = document.forms["addProjectForm"]["projectTitle"].value;
+    if (newProjectTitle == "") {
+        alert("Fill it out!");
+        return false;
+    }
+    else {
+        mainContent.insertBefore(newProject, todoItemFormBtn);
+        console.log(mainContent.children[1]);
+        console.log(mainContent);
+    }
     //todo: hide every other div except for target div
     //line below references the child elements of target element
-    console.log(mainContent.children[1]);
+    
     //todo: name of project
     //todo: create button to go back to this page/div
     //todo: implement same layout as inbox page/div
@@ -130,3 +126,19 @@ createProjectBtn.addEventListener("click", createProject);
 // let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "03/08/2023", "high")
 
 // let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
+
+//prevents form submit
+
+inputForms.forEach(item => {
+    item.addEventListener("submit", event => {
+        event.preventDefault();
+    })
+})
+
+// todoItemFormContainer.addEventListener('submit', (event) => {
+//     event.preventDefault();
+// });
+
+// projectFormContainer.addEventListener('submit', (event) => {
+//     event.preventDefault();
+// });

@@ -4,7 +4,7 @@ const todoFactory = (title, description, dueDate, priority) => {
 }
 
 //Constructor pattern to create todo items
-const todoConstructor = function(title, description, dueDate, priority, project) {
+const todoConstructor = function(title, description, dueDate, priority) {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
