@@ -1,6 +1,6 @@
 import "./style.css";
 import { todoFactory, todoConstructor } from "./todo-factory.js";
-import { newProject } from "./projects";
+import { projectConstructor } from "./projects";
 
 //variables
 const todoItemFormContainer = document.getElementById("todoItemFormContainer");
@@ -17,6 +17,7 @@ let createProjectBtn = document.getElementById("createProjectBtn");
 const projectFromContainer = document.getElementById("projectFormContainer");
 let hideProjectFormBtn = document.getElementById("hideProjectFormBtn");
 const inputForms = document.querySelectorAll(".inputForms");
+let projectDashboard = document.getElementById("projectDashboard");
 
 // let funProjects = [];
 
@@ -62,7 +63,14 @@ function createProject() {
         return false;
     }
     else {
+        let newProjectConstructor = new projectConstructor(newProjectTitle);
+
+        let newProject = document.createElement("div");
         mainContent.insertBefore(newProject, todoItemFormBtn);
+        let newProjectButton = document.createElement("button");
+        newProjectButton.innerHTML = newProjectTitle;
+        projectDashboard.appendChild(newProjectButton);
+        
         console.log(mainContent.children[1]);
         console.log(mainContent);
     }

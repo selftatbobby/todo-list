@@ -1,4 +1,6 @@
-let newProject = document.createElement("div");
-newProject.id = "new";
+const projectConstructor = function(title) {
+    this.title = title;
+}
 
-export {newProject};
+
+export {projectConstructor};
