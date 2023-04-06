@@ -57,28 +57,25 @@ function showInbox() {
 
 function createProject() {
     //todo: add div to display
-    let newProjectTitle = document.forms["addProjectForm"]["projectTitle"].value;
+    let newProjectTitle = document.forms["addProjectForm"]["projectTitle"].value;//todo: name of project
     if (newProjectTitle == "") {
         alert("Fill it out!");
         return false;
     }
     else {
         let newProjectConstructor = new projectConstructor(newProjectTitle);
-
+        //create div for new project
         let newProject = document.createElement("div");
         mainContent.insertBefore(newProject, todoItemFormBtn);
+        //create button for new project
         let newProjectButton = document.createElement("button");
         newProjectButton.innerHTML = newProjectTitle;
         projectDashboard.appendChild(newProjectButton);
-        
-        console.log(mainContent.children[1]);
+        //hide every other div except for target div
+        console.log(mainContent.children[1]);//references the child elements of target element
         console.log(mainContent);
+        //todo: create button to go back to this page/div
     }
-    //todo: hide every other div except for target div
-    //line below references the child elements of target element
-    
-    //todo: name of project
-    //todo: create button to go back to this page/div
     //todo: implement same layout as inbox page/div
     hideAddProject();
 }
@@ -102,7 +99,7 @@ function hideAddTodoForm() {
     todoItemForm.reset();
 }
 
-// addevent to buttons
+// addeventlisteners
 addTodoItemBtn.addEventListener("click", addTodoItem);
 todoItemFormBtn.addEventListener("click", showAddTodoForm);
 hideTodoFormBtn.addEventListener("click", hideAddTodoForm);
@@ -110,6 +107,13 @@ hideTodoFormBtn.addEventListener("click", hideAddTodoForm);
 addProjectBtn.addEventListener("click", showAddProject);
 hideProjectFormBtn.addEventListener("click", hideAddProject);
 createProjectBtn.addEventListener("click", createProject);
+
+inputForms.forEach(item => {
+    item.addEventListener("submit", event => {
+        event.preventDefault();
+    })
+})//prevents form submission
+
 //Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
 // mainContent.appendChild(newProject);
 
@@ -135,13 +139,8 @@ createProjectBtn.addEventListener("click", createProject);
 
 // let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
 
-//prevents form submit
 
-inputForms.forEach(item => {
-    item.addEventListener("submit", event => {
-        event.preventDefault();
-    })
-})
+
 
 // todoItemFormContainer.addEventListener('submit', (event) => {
 //     event.preventDefault();
