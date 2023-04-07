@@ -51,9 +51,7 @@ function validateForm() {
 
 }
 
-function showInbox() {
 
-}
 
 function createProject() {
     //todo: add div to display
@@ -64,13 +62,13 @@ function createProject() {
     }
     else {
         let newProjectConstructor = new projectConstructor(newProjectTitle);
-        //create div for new project
-        let newProject = document.createElement("div");
+        let newProject = document.createElement("div");//create div for new project
+        newProject.classList.add("projectClass");
         mainContent.insertBefore(newProject, todoItemFormBtn);
-        //create button for new project
-        let newProjectButton = document.createElement("button");
+        let newProjectButton = document.createElement("button");//create button for new project
         newProjectButton.innerHTML = newProjectTitle;
         projectDashboard.appendChild(newProjectButton);
+
         //hide every other div except for target div
         console.log(mainContent.children[1]);//references the child elements of target element
         console.log(mainContent);
@@ -99,6 +97,9 @@ function hideAddTodoForm() {
     todoItemForm.reset();
 }
 
+function showInbox() {
+
+}
 // addeventlisteners
 addTodoItemBtn.addEventListener("click", addTodoItem);
 todoItemFormBtn.addEventListener("click", showAddTodoForm);

@@ -26,7 +26,13 @@ Todo
     2a. style
 2. build out inbox functionality to show current page of todo items
     3. replicate functionality to other pages/divs/projects when add project button is clicked
-        3a. make module that appends div/project to mainContent
-        3b. hides all other div/projects on mainContent
-        3c. object with indexes to reference back to div/projects
+        <!-- 3a. make module that appends div/project to mainContent -->
+      
+        
 
+Project dashboard features to implement
+-onclick => event.currentTarget has display shown, all other's display change to "none" (hides all other div/projects on mainContent)
+-each button on project dashboard references an index element in the "mainContent" div (object with indexes to reference back to div/projects)
+
+"I want to add a todo item"
+-dyanamic, allows user to add todo item to any created/current project/div
