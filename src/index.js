@@ -18,6 +18,7 @@ const projectFromContainer = document.getElementById("projectFormContainer");
 let hideProjectFormBtn = document.getElementById("hideProjectFormBtn");
 const inputForms = document.querySelectorAll(".inputForms");
 let projectDashboard = document.getElementById("projectDashboard");
+let projectClass = document.querySelectorAll(".projectClass");
 
 // let funProjects = [];
 
@@ -100,6 +101,21 @@ function hideAddTodoForm() {
 function showInbox() {
 
 }
+
+function hideProjects() {
+    //Set all projectClass classed elements' display to none
+    var i;
+    for (i = 0; i < projectClass.length; i++) {
+        projectClass[i].style.display = "none";
+      }  
+    console.log(projectClass.length);
+}
+
+
+function showProject() {
+    projectClass[0].style.display = "flex";
+}
+
 // addeventlisteners
 addTodoItemBtn.addEventListener("click", addTodoItem);
 todoItemFormBtn.addEventListener("click", showAddTodoForm);
@@ -108,6 +124,10 @@ hideTodoFormBtn.addEventListener("click", hideAddTodoForm);
 addProjectBtn.addEventListener("click", showAddProject);
 hideProjectFormBtn.addEventListener("click", hideAddProject);
 createProjectBtn.addEventListener("click", createProject);
+
+// inbox.addEventListener("click", hideProjects);
+// hideProjects();
+inbox.addEventListener("click", showProject);
 
 inputForms.forEach(item => {
     item.addEventListener("submit", event => {
