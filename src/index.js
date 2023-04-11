@@ -65,7 +65,9 @@ function createProject() {
         let newProjectConstructor = new projectConstructor(newProjectTitle);
         let newProject = document.createElement("div");//create div for new project
         newProject.classList.add("projectClass");
+
         mainContent.insertBefore(newProject, todoItemFormBtn);
+
         let newProjectButton = document.createElement("button");//create button for new project
         newProjectButton.innerHTML = newProjectTitle;
         projectDashboard.appendChild(newProjectButton);
@@ -73,6 +75,7 @@ function createProject() {
         //hide every other div except for target div
         console.log(mainContent.children[1]);//references the child elements of target element
         console.log(mainContent);
+        // console.log(mainContent.indexOf(newProject));
         //todo: create button to go back to this page/div
     }
     //todo: implement same layout as inbox page/div
