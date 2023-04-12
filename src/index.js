@@ -18,7 +18,7 @@ const projectFromContainer = document.getElementById("projectFormContainer");
 let hideProjectFormBtn = document.getElementById("hideProjectFormBtn");
 const inputForms = document.querySelectorAll(".inputForms");
 let projectDashboard = document.getElementById("projectDashboard");
-let projectClass = document.querySelectorAll(".projectClass");
+
 
 // let funProjects = [];
 
@@ -41,7 +41,7 @@ function addTodoItem() {
         let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
 
         let todoItem = document.createElement('p');
-        defaultProjects.appendChild(todoItem);
+        defaultProjects.appendChild(todoItem);//logic for which div to append* for loop if then
         todoItem.innerText = `TODO ITEM: ${newTitle}.\nDESCRIPTION: ${newDescription}.\nDUE-DATE: ${newDueDate}.\nPRIORITY: ${newPriority}.`;
     }
     hideAddTodoForm();
@@ -64,30 +64,45 @@ function createProject() {
     else {
         let newProjectConstructor = new projectConstructor(newProjectTitle);
         let newProject = document.createElement("div");//create div for new project
+        newProject.innerHTML = "hi0";
         newProject.classList.add("projectClass");
 
         mainContent.insertBefore(newProject, todoItemFormBtn);
 
         let newProjectButton = document.createElement("button");//create button for new project
         newProjectButton.innerHTML = newProjectTitle;
+        newProjectButton.addEventListener("click", hideProjects);
+        let projectIndex = (mainContent.children.length - 2);
+    
+        newProjectButton.onclick = function() {
+            mainContent.children[projectIndex].style.display = "flex";
+        }
+
         projectDashboard.appendChild(newProjectButton);
 
         //hide every other div except for target div
-        console.log(mainContent.children[1]);//references the child elements of target element
-        console.log(mainContent);
+
+
+        console.log(mainContent.children[1].style.display);//references the child elements of target element
+        
+        
         // console.log(mainContent.indexOf(newProject));
         //todo: create button to go back to this page/div
     }
     //todo: implement same layout as inbox page/div
-    hideAddProject();
+    hideAddProjectForm();
 }
+
+// function showProject(projectIndex) {
+//     mainContent.children[projectIndex].style.display = "flex";
+// }
 
 function showAddProject() {
     projectFromContainer.style.display = "flex";
     addProjectForm.reset();
 }
 
-function hideAddProject() {
+function hideAddProjectForm() {
     projectFromContainer.style.display = "none";
     addProjectForm.reset();
 }
@@ -102,22 +117,20 @@ function hideAddTodoForm() {
 }
 
 function showInbox() {
-
+    defaultProjects.style.display = "flex";
 }
 
 function hideProjects() {
     //Set all projectClass classed elements' display to none
+    let projectClass = document.querySelectorAll(".projectClass");
     var i;
     for (i = 0; i < projectClass.length; i++) {
         projectClass[i].style.display = "none";
-      }  
+    }
     console.log(projectClass.length);
 }
 
 
-function showProject() {
-    projectClass[0].style.display = "flex";
-}
 
 // addeventlisteners
 addTodoItemBtn.addEventListener("click", addTodoItem);
@@ -125,12 +138,12 @@ todoItemFormBtn.addEventListener("click", showAddTodoForm);
 hideTodoFormBtn.addEventListener("click", hideAddTodoForm);
 
 addProjectBtn.addEventListener("click", showAddProject);
-hideProjectFormBtn.addEventListener("click", hideAddProject);
+hideProjectFormBtn.addEventListener("click", hideAddProjectForm);
 createProjectBtn.addEventListener("click", createProject);
 
-// inbox.addEventListener("click", hideProjects);
+inbox.addEventListener("click", hideProjects);
 // hideProjects();
-inbox.addEventListener("click", showProject);
+inbox.addEventListener("click", showInbox);
 
 inputForms.forEach(item => {
     item.addEventListener("submit", event => {
