@@ -43,15 +43,16 @@ function addTodoItem() {
         let todoItem = document.createElement('p');
         defaultProjects.appendChild(todoItem);//logic for which div to append* for loop if then
         todoItem.innerText = `TODO ITEM: ${newTitle}.\nDESCRIPTION: ${newDescription}.\nDUE-DATE: ${newDueDate}.\nPRIORITY: ${newPriority}.`;
+        
+        // var i;
+        // let projectClass = document.querySelectorAll(".projectClass");
+        // for (i = 0; i < projectClass.length; i++) {
+        //     console.log(projectClass[i].style.display);
+        // }
+
     }
     hideAddTodoForm();
 }
-
-
-function validateForm() {
-
-}
-
 
 
 function createProject() {
