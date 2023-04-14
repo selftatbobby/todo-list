@@ -41,14 +41,20 @@ function addTodoItem() {
         let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
 
         let todoItem = document.createElement('p');
-        defaultProjects.appendChild(todoItem);//logic for which div to append* for loop if then
         todoItem.innerText = `TODO ITEM: ${newTitle}.\nDESCRIPTION: ${newDescription}.\nDUE-DATE: ${newDueDate}.\nPRIORITY: ${newPriority}.`;
+
+
+        var i;
+        let projectClass = document.querySelectorAll(".projectClass");
+        for (i = 0; i < projectClass.length; i++) {
+            if (projectClass[i].style.display = "flex") {
+                console.log(projectClass[i].style.display);
+                projectClass[i].appendChild(todoItem);
+            };
+        }
+        // defaultProjects.appendChild(todoItem);//logic for which div to append* for loop if then
         
-        // var i;
-        // let projectClass = document.querySelectorAll(".projectClass");
-        // for (i = 0; i < projectClass.length; i++) {
-        //     console.log(projectClass[i].style.display);
-        // }
+        
 
     }
     hideAddTodoForm();
@@ -73,8 +79,8 @@ function createProject() {
         let newProjectButton = document.createElement("button");//create button for new project
         newProjectButton.innerHTML = newProjectTitle;
         newProjectButton.addEventListener("click", hideProjects);
+
         let projectIndex = (mainContent.children.length - 2);
-    
         newProjectButton.onclick = function() {
             mainContent.children[projectIndex].style.display = "flex";
         }
@@ -84,7 +90,7 @@ function createProject() {
         //hide every other div except for target div
 
 
-        console.log(mainContent.children[1].style.display);//references the child elements of target element
+        // console.log(mainContent.children[1].style.display);//references the child elements of target element
         
         
         // console.log(mainContent.indexOf(newProject));
@@ -128,7 +134,7 @@ function hideProjects() {
     for (i = 0; i < projectClass.length; i++) {
         projectClass[i].style.display = "none";
     }
-    console.log(projectClass.length);
+    // console.log(projectClass.length);
 }
 
 
