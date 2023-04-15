@@ -10,7 +10,7 @@ let todoItemFormBtn = document.getElementById("todoItemFormBtn");
 let hideTodoFormBtn = document.getElementById("hideTodoFormBtn");
 let mainContent = document.getElementById("mainContent");
 let defaultProjects = document.getElementById("defaultProjects");
-let inbox = document.getElementById("inbox");
+let inboxBtn = document.getElementById("inboxBtn");
 let addTodoItemBtn = document.getElementById("addTodoItemBtn");
 let addProjectBtn = document.getElementById("addProject");
 let createProjectBtn = document.getElementById("createProjectBtn");
@@ -46,16 +46,14 @@ function addTodoItem() {
 
         var i;
         let projectClass = document.querySelectorAll(".projectClass");
-        for (i = 0; i < projectClass.length; i++) {
+        for (i = 0; i < projectClass.length; i++) {                  //logic for which div to append* for loop if then
             if (projectClass[i].style.display = "flex") {
+                // projectClass[i].appendChild(todoItem);
                 console.log(projectClass[i].style.display);
-                projectClass[i].appendChild(todoItem);
-            };
-        }
-        // defaultProjects.appendChild(todoItem);//logic for which div to append* for loop if then
-        
-        
 
+            };
+        
+        }
     }
     hideAddTodoForm();
 }
@@ -78,13 +76,13 @@ function createProject() {
 
         let newProjectButton = document.createElement("button");//create button for new project
         newProjectButton.innerHTML = newProjectTitle;
+
         newProjectButton.addEventListener("click", hideProjects);
-
-        let projectIndex = (mainContent.children.length - 2);
+        // let projectIndex = (mainContent.children.length - 2);
         newProjectButton.onclick = function() {
-            mainContent.children[projectIndex].style.display = "flex";
+            // mainContent.children[projectIndex].style.display = "flex";
+            newProject.style.display = "flex";
         }
-
         projectDashboard.appendChild(newProjectButton);
 
         //hide every other div except for target div
@@ -148,9 +146,8 @@ addProjectBtn.addEventListener("click", showAddProject);
 hideProjectFormBtn.addEventListener("click", hideAddProjectForm);
 createProjectBtn.addEventListener("click", createProject);
 
-inbox.addEventListener("click", hideProjects);
-// hideProjects();
-inbox.addEventListener("click", showInbox);
+inboxBtn.addEventListener("click", hideProjects);
+inboxBtn.addEventListener("click", showInbox);
 
 inputForms.forEach(item => {
     item.addEventListener("submit", event => {
