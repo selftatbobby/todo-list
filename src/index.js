@@ -47,7 +47,7 @@ function addTodoItem() {
         var i;
         let projectClass = document.querySelectorAll(".projectClass");
         for (i = 0; i < projectClass.length; i++) {                  //logic for which div to append* for loop if then
-            if (projectClass[i].style.display = "flex") {
+            if (projectClass[i].style.display == "flex") {
                 // projectClass[i].appendChild(todoItem);
                 console.log(projectClass[i].style.display);
 
