@@ -27,6 +27,11 @@ Todo
 2. build out inbox functionality to show current page of todo items
     3. replicate functionality to other pages/divs/projects when add project button is clicked
         <!-- 3a. make module that appends div/project to mainContent -->
+
+        
+4. add title to project upon creation
+5. intialize display flex to defaultprojects/inbox page
+
       
         
 

@@ -48,9 +48,7 @@ function addTodoItem() {
         let projectClass = document.querySelectorAll(".projectClass");
         for (i = 0; i < projectClass.length; i++) {                  //logic for which div to append* for loop if then
             if (projectClass[i].style.display == "flex") {
-                // projectClass[i].appendChild(todoItem);
-                console.log(projectClass[i].style.display);
-
+                projectClass[i].appendChild(todoItem);//adds todo item to project that is displayed in 'flex'
             };
         
         }
@@ -69,7 +67,7 @@ function createProject() {
     else {
         let newProjectConstructor = new projectConstructor(newProjectTitle);
         let newProject = document.createElement("div");//create div for new project
-        newProject.innerHTML = "hi0";
+        newProject.innerHTML = "hi0";//let's make this the title of project/div
         newProject.classList.add("projectClass");
 
         mainContent.insertBefore(newProject, todoItemFormBtn);
