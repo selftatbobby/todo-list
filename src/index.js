@@ -20,11 +20,9 @@ const inputForms = document.querySelectorAll(".inputForms");
 let projectDashboard = document.getElementById("projectDashboard");
 
 
-// let funProjects = [];
 
 
-
-
+showInbox();
 
 //functions
 
@@ -46,7 +44,7 @@ function addTodoItem() {
 
         var i;
         let projectClass = document.querySelectorAll(".projectClass");
-        for (i = 0; i < projectClass.length; i++) {                  //logic for which div to append* for loop if then
+        for (i = 0; i < projectClass.length; i++) {     //logic for which div to append* for loop if then
             if (projectClass[i].style.display == "flex") {
                 projectClass[i].appendChild(todoItem);//adds todo item to project that is displayed in 'flex'
             };
@@ -67,7 +65,10 @@ function createProject() {
     else {
         let newProjectConstructor = new projectConstructor(newProjectTitle);
         let newProject = document.createElement("div");//create div for new project
-        newProject.innerHTML = "hi0";//let's make this the title of project/div
+        let projectTitleElement = document.createElement("h1");//create title
+        projectTitleElement.innerHTML = `Project: ${newProjectTitle}`;//let's make this the title of project/div
+        newProject.appendChild(projectTitleElement);
+        
         newProject.classList.add("projectClass");
 
         mainContent.insertBefore(newProject, todoItemFormBtn);
@@ -78,27 +79,15 @@ function createProject() {
         newProjectButton.addEventListener("click", hideProjects);
         // let projectIndex = (mainContent.children.length - 2);
         newProjectButton.onclick = function() {
-            // mainContent.children[projectIndex].style.display = "flex";
             newProject.style.display = "flex";
         }
+        newProject.style.display = "flex"; //initiates display "flex"
+        hideInbox(); 
         projectDashboard.appendChild(newProjectButton);
-
-        //hide every other div except for target div
-
-
-        // console.log(mainContent.children[1].style.display);//references the child elements of target element
-        
-        
-        // console.log(mainContent.indexOf(newProject));
-        //todo: create button to go back to this page/div
     }
-    //todo: implement same layout as inbox page/div
     hideAddProjectForm();
 }
 
-// function showProject(projectIndex) {
-//     mainContent.children[projectIndex].style.display = "flex";
-// }
 
 function showAddProject() {
     projectFromContainer.style.display = "flex";
@@ -123,6 +112,10 @@ function showInbox() {
     defaultProjects.style.display = "flex";
 }
 
+function hideInbox() {
+    defaultProjects.style.display = "none";
+}
+
 function hideProjects() {
     //Set all projectClass classed elements' display to none
     let projectClass = document.querySelectorAll(".projectClass");
@@ -130,7 +123,6 @@ function hideProjects() {
     for (i = 0; i < projectClass.length; i++) {
         projectClass[i].style.display = "none";
     }
-    // console.log(projectClass.length);
 }
 
 
@@ -153,38 +145,3 @@ inputForms.forEach(item => {
     })
 })//prevents form submission
 
-//Projects will be dom created elements, todo items will be appended to the dom elements/projects. Default project == inbox
-// mainContent.appendChild(newProject);
-
-
-// defaultProjects.push(workout);
-// defaultProjects.push(carDelivery);
-// defaultProjects.innerHTML = `Task: ${workout.title}. Details: ${workout.description}`;
-
-
-
-// funProjects = defaultProjects.splice(0,1)
-// console.log(defaultProjects[0].description);
-// console.log(funProjects[0].description);
-
-
-// console.log(typeof(workout));
-// console.log(defaultProjects);
-// console.log(defaultProjects[1]);
-
-
-// let workout = todoFactory("workout", "go to the gym and do a session", "02/26/2023", "high");
-// let carDelivery = todoFactory("pickup car", "pickup new car from dealership", "03/08/2023", "high")
-
-// let mealPrep = new todoConstructor("mealprep", "make food", "02/28/2023", "medium");
-
-
-
-
-// todoItemFormContainer.addEventListener('submit', (event) => {
-//     event.preventDefault();
-// });
-
-// projectFormContainer.addEventListener('submit', (event) => {
-//     event.preventDefault();
-// });
