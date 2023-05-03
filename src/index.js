@@ -25,6 +25,24 @@ let projectDashboard = document.getElementById("projectDashboard");
 showInbox();
 
 //functions
+function createTodoItem() {
+    let newTitle = document.forms["todoItemForm"]["todoTitle"].value;
+    let newDescription = document.forms["todoItemForm"]["todoDescription"].value;
+    let newDueDate = document.forms["todoItemForm"]["todoDuedate"].value;
+    let newPriority = document.forms["todoItemForm"]["todoPriority"].value;
+    if (newTitle == "" || newDescription == "" || newDueDate == "" || newPriority == "") {
+        alert("Fill it out!");
+        return false;
+    }
+    else {
+        let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
+        console.log(newTodoConstructor);
+        newTodoConstructor.title = "hi";
+        console.log(newTodoConstructor);
+    }
+    return newTodoConstructor
+}//implementing new feature
+
 
 function addTodoItem() {
     let newTitle = document.forms["todoItemForm"]["todoTitle"].value;
@@ -50,6 +68,9 @@ function addTodoItem() {
             };
         
         }
+        console.log(newTodoConstructor);
+        newTodoConstructor.title = "hi";
+        console.log(newTodoConstructor);
     }
     hideAddTodoForm();
 }
