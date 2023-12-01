@@ -1,4 +1,7 @@
 # todo-list
+Project Completed.
+
+Project Notes:
 https://www.w3schools.com/js/js_arrays.asp
 https://www.freecodecamp.org/news/how-to-remove-an-element-from-a-javascript-array-removing-a-specific-item-in-js/
 
