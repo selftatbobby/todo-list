@@ -24,24 +24,24 @@ let projectDashboard = document.getElementById("projectDashboard");
 
 showInbox();
 
-//functions
-function createTodoItem() {
-    let newTitle = document.forms["todoItemForm"]["todoTitle"].value;
-    let newDescription = document.forms["todoItemForm"]["todoDescription"].value;
-    let newDueDate = document.forms["todoItemForm"]["todoDuedate"].value;
-    let newPriority = document.forms["todoItemForm"]["todoPriority"].value;
-    if (newTitle == "" || newDescription == "" || newDueDate == "" || newPriority == "") {
-        alert("Fill it out!");
-        return false;
-    }
-    else {
-        let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
-        console.log(newTodoConstructor);
-        newTodoConstructor.title = "hi";
-        console.log(newTodoConstructor);
-    }
-    return newTodoConstructor
-}//implementing new feature
+// functions
+// function createTodoItem() {
+//     let newTitle = document.forms["todoItemForm"]["todoTitle"].value;
+//     let newDescription = document.forms["todoItemForm"]["todoDescription"].value;
+//     let newDueDate = document.forms["todoItemForm"]["todoDuedate"].value;
+//     let newPriority = document.forms["todoItemForm"]["todoPriority"].value;
+//     if (newTitle == "" || newDescription == "" || newDueDate == "" || newPriority == "") {
+//         alert("Fill it out!");
+//         return false;
+//     }
+//     else {
+//         let newTodoConstructor = new todoConstructor(newTitle, newDescription, newDueDate, newPriority);
+//         console.log(newTodoConstructor);
+//         newTodoConstructor.title = "hi";
+//         console.log(newTodoConstructor);
+//     }
+//     return newTodoConstructor
+// }//implementing new feature
 
 
 function addTodoItem() {
@@ -58,19 +58,48 @@ function addTodoItem() {
 
         let todoItem = document.createElement('p');
         todoItem.innerText = `TODO ITEM: ${newTitle}.\nDESCRIPTION: ${newDescription}.\nDUE-DATE: ${newDueDate}.\nPRIORITY: ${newPriority}.`;
-
+        let removeTodoItemButton = document.createElement('button');
+        
+        let editTodoItemButton = document.createElement('button');
+        editTodoItemButton.innerText = 'Edit to do item';
+        function editTodoItem() {
+            let editTitle = prompt("New title for todo item","Title");
+            if (editTitle == null){
+                editTitle = newTitle;
+            }
+            let editDescription = prompt("New desciprtion for todo item", "Description");
+            if (editDescription == null){
+                editDescription = newDescription;
+            }
+            let editDueDate = prompt("New due date for todo item", "Year/Month/Day, Example: 2023/06/17");
+            if (editDueDate == null){
+                editDueDate = newDueDate;
+            }
+            let editPriority = prompt("New priority for todo item", "high, medium, low");
+            if (editPriority == null){
+                editPriority = newPriority;
+            }
+            todoItem.innerText = `TODO ITEM: ${editTitle}.\nDESCRIPTION: ${editDescription}.\nDUE-DATE: ${editDueDate}.\nPRIORITY: ${editPriority}.`
+        }
+        editTodoItemButton.addEventListener("click", editTodoItem);
+        removeTodoItemButton.innerText = 'Remove to do item';
+        function removeItem(){
+            todoItem.remove();
+            removeTodoItemButton.remove();
+            editTodoItemButton.remove();
+        }
+        removeTodoItemButton.addEventListener("click", removeItem);
 
         var i;
         let projectClass = document.querySelectorAll(".projectClass");
         for (i = 0; i < projectClass.length; i++) {     //logic for which div to append* for loop if then
             if (projectClass[i].style.display == "flex") {
                 projectClass[i].appendChild(todoItem);//adds todo item to project that is displayed in 'flex'
+                projectClass[i].appendChild(removeTodoItemButton);//adds remove button for todo item to project that is displayed in 'flex'
+                projectClass[i].appendChild(editTodoItemButton);//adds edit button for todo item to project that is displayed in 'flex'
             };
         
         }
-        console.log(newTodoConstructor);
-        newTodoConstructor.title = "hi";
-        console.log(newTodoConstructor);
     }
     hideAddTodoForm();
 }
@@ -105,6 +134,8 @@ function createProject() {
         newProject.style.display = "flex"; //initiates display "flex"
         hideInbox(); 
         projectDashboard.appendChild(newProjectButton);
+
+        console.log(newProject);
     }
     hideAddProjectForm();
 }
